@@ -34,6 +34,7 @@ class FileReader
         foreach ($file as $f){
             $lines[] = explode(',', $f);    // array[line][column]
         }
+
         $this->ShowTable($output, $lines);
     }
 
@@ -45,8 +46,7 @@ class FileReader
         $table = new Table($output);
         $table
             ->setHeaders($header)
-            ->setRows($lines)
-            ->setStyle('borderless');
+            ->setRows($lines);
         $table->render();
     }
 }
